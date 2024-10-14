@@ -236,6 +236,7 @@
             this.tabControlHTML.SelectedIndex = 0;
             this.tabControlHTML.Size = new System.Drawing.Size(800, 377);
             this.tabControlHTML.TabIndex = 7;
+            this.tabControlHTML.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlHTML_Selecting);
             // 
             // tabPageHTMML
             // 
@@ -258,6 +259,7 @@
             this.txtHTML.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtHTML.Size = new System.Drawing.Size(786, 345);
             this.txtHTML.TabIndex = 0;
+            this.txtHTML.TextChanged += new System.EventHandler(this.txtHTML_TextChanged);
             // 
             // tabPageWeb
             // 
@@ -322,6 +324,7 @@
             this.nuovoToolStripButton.Name = "nuovoToolStripButton";
             this.nuovoToolStripButton.Size = new System.Drawing.Size(24, 24);
             this.nuovoToolStripButton.Text = "&Nuovo";
+            this.nuovoToolStripButton.Click += new System.EventHandler(this.nuovoToolStripButton_Click);
             // 
             // apriToolStripButton
             // 
@@ -455,6 +458,7 @@
             this.nuovoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.nuovoToolStripMenuItem.Text = "&Nuovo";
+            this.nuovoToolStripMenuItem.Click += new System.EventHandler(this.nuovoToolStripMenuItem_Click);
             // 
             // apriToolStripMenuItem
             // 
@@ -511,7 +515,7 @@
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // Form1
+            // frmEditorHtml
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -520,8 +524,9 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmEditorHtml";
+            this.Text = "Editor HTML";
+            this.Load += new System.EventHandler(this.frmEditorHtml_Load);
             this.tabControlHTML.ResumeLayout(false);
             this.tabPageHTMML.ResumeLayout(false);
             this.tabPageHTMML.PerformLayout();

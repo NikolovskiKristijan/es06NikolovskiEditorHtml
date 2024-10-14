@@ -16,5 +16,41 @@ namespace es06NikolovskiEditorHtml
         {
             InitializeComponent();
         }
+
+        private void frmEditorHtml_Load(object sender, EventArgs e)
+        {
+            txtHTML.MaxLength = 200;//32767;
+            pgbChar.Maximum = txtHTML.MaxLength;
+            visualizzaNchar();
+        }
+
+        private void visualizzaNchar()
+        {
+            lblChar.Text = "Numero Caratteri " + txtHTML.TextLength +
+                "/" + txtHTML.MaxLength;
+        }
+
+        private void nuovoToolStripButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Nuovo ToolBar");
+        }
+
+        private void nuovoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // MessageBox.Show("Nuovo Menu");
+            //webBrowserHTML.Navigate("http://www.vallauri.edu");
+        }
+
+        private void txtHTML_TextChanged(object sender, EventArgs e)
+        {
+            pgbChar.Value = txtHTML.TextLength;
+            visualizzaNchar();
+        }
+
+        private void tabControlHTML_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (e.TabPage.Name == "tabPageWeb")
+                webBrowserHTML.DocumentText = txtHTML.Text;
+        }
     }
 }
